@@ -1,6 +1,13 @@
 # wireless
 my notes for wireless
 
+## Compare and contrast the characteristics of different wireless standards.
+
+|Standard|Frequencies|Range|Bandwidth|
+|--|--|--|
+|NFC|13.56 MHz|10 cm|424 kbit/s|
+|Bluetooth|2.4 GHz|1-2.1 mbits/s|
+
 ## mitigating collisions
 
 ![collision from flowchart](https://rhildred.github.io/wireless/readmeimages/US4063220-4.png "collision from flowchart")
