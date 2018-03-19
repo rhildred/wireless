@@ -4,7 +4,7 @@ my notes for wireless
 ## Compare and contrast the characteristics of different wireless standards.
 
 | Standard | Frequencies | Range | Bandwidth |
-| -- | -- | -- |
+| --- | --- | --- |
 | NFC | 13.56 MHz |10 cm | 424 kbit/s |
 | Bluetooth | 2.4 GHz | 10 m | 1-2.1 mbits/s |
 
