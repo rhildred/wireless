@@ -7,6 +7,7 @@ my notes for wireless
 | --- | --- | --- |
 | NFC | 13.56 MHz |10 cm | 424 kbit/s |
 | Bluetooth | 2.4 GHz | 10 m | 1-2.1 mbits/s |
+| WiFi | 2.4, 5Ghz | 100 m | up to 250 mbits/s |
 
 These are the standards in common use. NFC for payments. Bluetooth for headsets, peripherals and Beacons.
 
