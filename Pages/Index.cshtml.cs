@@ -71,7 +71,7 @@ public class User{
                 aUsers[sFrom] = new User();
             }
             oMessage.Message(aUsers[sFrom].OnMessage(sBody));
-            return Content(oMessage.ToString());
+            return Content(oMessage.ToString(), "application/xml");
         }
     }
 }

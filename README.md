@@ -1,6 +1,8 @@
 # wireless
 my notes for wireless
 
+
+
 ## Compare and contrast the characteristics of different wireless standards.
 
 | Standard | Frequencies | Range | Bandwidth |
