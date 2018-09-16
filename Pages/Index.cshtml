@@ -1,56 +1,34 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Chat Bot";
 }
 
-<div ng-app="myApp" ng-controller="myCtrl">
-    <form>
-        <div ng-repeat="(n, message) in messages track by n">{{message.From}}:&nbsp;{{message.Body}}</div>
-        <p>Message :
-            <input type="text" ng-model="newMessageText">
-            <button type="submit" ng-click="addMessage()">Send</button>
-        </p>
+<!-- 
+A concept for a chat interface. 
+Try writing a new message! :)
+Follow me here:
+Twitter: https://twitter.com/thatguyemil
+Codepen: https://codepen.io/emilcarlsson/
+Website: http://emilcarlsson.se/
+-->
 
-    </form>
+<div id="frame">
+	<div class="content">
+		<div class="contact-profile">
+			<img src="images/Y.svg" alt="" />
+			<p id="uName">Harvey Specter</p>
+		</div>
+		<div class="messages">
+			<ul>
+			</ul>
+		</div>
+		<div class="message-input">
+			<div class="wrap">
+			<input type="text" placeholder='Write your message to the bot (try "hello" to start)...' />
+			<i class="fa fa-paperclip attachment" aria-hidden="true"></i>
+			<button class="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+			</div>
+		</div>
+	</div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/x2js/1.2.0/xml2json.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/node-uuid/1.4.7/uuid.js"></script>
-<script>
-    var app = angular.module("myApp", []);
-    app.controller("myCtrl", function ($scope, $http) {
-        $scope.messages = [];
-        $scope.sender = "you@@" + uuid.v4();
-        $scope.addMessage = function () {
-            var newMessage = {
-                Body: $scope.newMessageText,
-                From: $scope.sender
-            }
-            $scope.messages.push(newMessage);
-            $scope.newMessageText = "";
-            $http({
-                method: 'POST',
-                url: "/",
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded' // Note the appropriate header
-                },
-                data: "From=" + encodeURIComponent(newMessage.From) +
-                    "&Body=" + encodeURIComponent(newMessage.Body)
-            }).then(function (data) {
-                var x2js = new X2JS();
-                var jsonObj = x2js.xml_str2json(data.data);
-                var newResponse = {
-                    Body: jsonObj.Response.Message,
-                    From: "bot"
-                };
-
-                $scope.messages.push(newResponse);
-            },
-                function (err) {
-                    console.log(err);
-                });
-        }
-    });
-
-</script>
